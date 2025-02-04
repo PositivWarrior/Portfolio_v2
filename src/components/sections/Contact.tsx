@@ -146,13 +146,17 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3 px-8 gradient-border glass-effect font-semibold
-                  transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/20
+                className="w-full py-3 px-8 font-bold text-white
+                  bg-gradient-to-r from-primary to-primary/80
+                  hover:from-primary/90 hover:to-primary/70
+                  rounded-lg shadow-lg shadow-primary/20
+                  transition-all duration-300 hover:scale-[1.02]
                   disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100
-                  bg-gradient-to-r from-primary via-primary/50 to-primary/30
-                  text-black dark:text-white font-bold relative overflow-hidden
-                  before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/10 before:to-transparent
-                  before:translate-y-full hover:before:translate-y-0 before:transition-transform before:duration-300"
+                  relative overflow-hidden
+                  before:absolute before:inset-0 before:bg-gradient-to-r 
+                  before:from-white/20 before:to-transparent
+                  before:translate-x-[-100%] hover:before:translate-x-[100%] 
+                  before:transition-transform before:duration-500"
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>

@@ -701,6 +701,12 @@ video {
 .mt-4 {
   margin-top: 1rem;
 }
+.mb-20 {
+  margin-bottom: 5rem;
+}
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
 .block {
   display: block;
 }
@@ -872,6 +878,9 @@ video {
 .gap-8 {
   gap: 2rem;
 }
+.gap-5 {
+  gap: 1.25rem;
+}
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
@@ -901,6 +910,16 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+}
+.space-y-10 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
+}
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 .overflow-hidden {
   overflow: hidden;
@@ -1048,6 +1067,9 @@ video {
 .to-primary\/30 {
   --tw-gradient-to: hsl(var(--primary) / 0.3) var(--tw-gradient-to-position);
 }
+.to-primary\/80 {
+  --tw-gradient-to: hsl(var(--primary) / 0.8) var(--tw-gradient-to-position);
+}
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1067,6 +1089,9 @@ video {
 }
 .p-8 {
   padding: 2rem;
+}
+.p-10 {
+  padding: 2.5rem;
 }
 .px-3 {
   padding-left: 0.75rem;
@@ -1223,6 +1248,15 @@ video {
 .opacity-40 {
   opacity: 0.4;
 }
+.shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-primary\/20 {
+  --tw-shadow-color: hsl(var(--primary) / 0.2);
+  --tw-shadow: var(--tw-shadow-colored);
+}
 .blur-3xl {
   --tw-blur: blur(64px);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -1359,6 +1393,12 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.before\:translate-x-\[-100\%\]::before {
+  content: var(--tw-content);
+  --tw-translate-x: -100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .before\:bg-gradient-to-r::before {
   content: var(--tw-content);
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
@@ -1367,6 +1407,13 @@ video {
 .before\:from-white\/10::before {
   content: var(--tw-content);
   --tw-gradient-from: rgb(255 255 255 / 0.1) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.before\:from-white\/20::before {
+  content: var(--tw-content);
+  --tw-gradient-from: rgb(255 255 255 / 0.2) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
@@ -1384,9 +1431,23 @@ video {
 }
 
 .before\:duration-300::before {
+  content: var(--tw-content);
   transition-duration: 300ms;
+}
+
+.before\:duration-500::before {
+  content: var(--tw-content);
+  transition-duration: 500ms;
+}
+
+.before\:duration-300::before {
   content: var(--tw-content);
   animation-duration: 300ms;
+}
+
+.before\:duration-500::before {
+  content: var(--tw-content);
+  animation-duration: 500ms;
 }
 
 .hover\:scale-105:hover {
@@ -1411,6 +1472,16 @@ video {
 
 .hover\:bg-gold\/90:hover {
   background-color: rgb(255 215 0 / 0.9);
+}
+
+.hover\:from-primary\/90:hover {
+  --tw-gradient-from: hsl(var(--primary) / 0.9) var(--tw-gradient-from-position);
+  --tw-gradient-to: hsl(var(--primary) / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.hover\:to-primary\/70:hover {
+  --tw-gradient-to: hsl(var(--primary) / 0.7) var(--tw-gradient-to-position);
 }
 
 .hover\:text-accent:hover {
@@ -1454,6 +1525,12 @@ video {
 .hover\:before\:translate-y-0:hover::before {
   content: var(--tw-content);
   --tw-translate-y: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:before\:translate-x-\[100\%\]:hover::before {
+  content: var(--tw-content);
+  --tw-translate-x: 100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 

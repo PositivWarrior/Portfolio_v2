@@ -119,10 +119,10 @@ export default function Home() {
             <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
               {/* Text Content */}
               <div className="flex-1 text-center lg:text-left space-y-8 max-w-2xl">
-                <div className="space-y-8">
+                <div className="space-y-2">
                   <motion.h1 
                     variants={fadeInUp}
-                    className="text-5xl md:text-7xl font-bold text-gradient"
+                    className="text-5xl md:text-7xl font-bold text-gradient p-10"
                   >
                     Kacper Margol
                   </motion.h1>
