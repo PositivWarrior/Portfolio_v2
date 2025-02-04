@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { FaReact, FaNodeJs, FaGitAlt } from 'react-icons/fa'
+import { FaReact, FaNodeJs, FaGitAlt, FaDownload } from 'react-icons/fa'
 import { SiTypescript, SiTailwindcss, SiNextdotjs } from 'react-icons/si'
 
 const skills = [
@@ -36,26 +36,59 @@ const itemVariants = {
 }
 
 export default function About() {
+  const handleDownloadCV = () => {
+    const cvUrl = '/Kacper Margol BED CV EN.pdf'
+    window.open(cvUrl, '_blank')
+  }
+
   return (
     <section id="about" className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Profile Image */}
+          {/* Profile Image with Hover Effect */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative aspect-square max-w-md mx-auto"
+            className="relative aspect-square max-w-md mx-auto group"
           >
-            <div className="absolute inset-0 rounded-full border-2 border-gold/30 animate-pulse" />
-            <Image
-              src="/profile-placeholder.jpg"
-              alt="Profile"
-              width={400}
-              height={400}
-              className="rounded-full object-cover border-4 border-gold"
-            />
+            {/* Animated Border */}
+            <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-pulse" />
+            
+            {/* Profile Image */}
+            <div className="relative rounded-full overflow-hidden border-4 border-primary">
+              <Image
+                src="/Kacpru_drawing.jpg"
+                alt="Profile"
+                width={400}
+                height={400}
+                className="rounded-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              
+              {/* Overlay with Download Button */}
+              <motion.div 
+                className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+              >
+                <motion.button
+                  onClick={handleDownloadCV}
+                  className="flex flex-col items-center gap-3 text-white transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+                  whileHover={{ scale: 1.1 }}
+                >
+                  <motion.div
+                    className="p-4 rounded-full gradient-border glass-effect"
+                    whileHover={{ 
+                      boxShadow: '0 0 20px rgba(255,255,255,0.2)',
+                    }}
+                  >
+                    <FaDownload className="w-6 h-6" />
+                  </motion.div>
+                  <span className="font-medium text-sm">Download CV</span>
+                </motion.button>
+              </motion.div>
+            </div>
           </motion.div>
 
           {/* Content */}
@@ -64,7 +97,7 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl font-bold text-gold"
+              className="text-4xl font-bold text-gradient"
             >
               About Me
             </motion.h2>
@@ -74,7 +107,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-lg text-gold/80"
+              className="text-lg text-foreground/80"
             >
               I'm a passionate Full-Stack Developer with expertise in modern web technologies.
               I love creating beautiful, responsive, and user-friendly applications that solve
@@ -89,15 +122,15 @@ export default function About() {
               viewport={{ once: true }}
               className="grid grid-cols-3 gap-4"
             >
-              {skills.map((skill, index) => (
+              {skills.map((skill) => (
                 <motion.div
                   key={skill.name}
                   variants={itemVariants}
                   className="flex flex-col items-center p-4 rounded-lg bg-secondary/50
-                    border border-gold/20 hover:border-gold/50 transition-colors"
+                    border border-primary/20 hover:border-primary/50 transition-colors"
                 >
-                  <skill.icon className="w-8 h-8 text-gold mb-2" />
-                  <span className="text-sm text-gold/80">{skill.name}</span>
+                  <skill.icon className="w-8 h-8 text-primary mb-2" />
+                  <span className="text-sm text-foreground/80">{skill.name}</span>
                 </motion.div>
               ))}
             </motion.div>

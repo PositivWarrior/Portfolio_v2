@@ -6,17 +6,17 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    description: 'A modern e-commerce platform built with Next.js and Stripe integration.',
-    image: '/project1-placeholder.jpg',
+    title: 'Marblogger',
+    description: 'MERN stack blog app.',
+    image: '/marblogger.png',
     github: '#',
     live: '#',
     tags: ['Next.js', 'TypeScript', 'Stripe'],
   },
   {
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates.',
-    image: '/project2-placeholder.jpg',
+    title: 'MLVri',
+    description: 'A simple page for a moving/renovation company.',
+    image: '/MLVri.png',
     github: '#',
     live: '#',
     tags: ['React', 'Node.js', 'Socket.io'],
@@ -82,6 +82,7 @@ export default function Projects() {
                   src={project.image}
                   alt={project.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>

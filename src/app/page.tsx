@@ -77,9 +77,10 @@ export default function Home() {
               className="relative w-full h-full hero-image-mask"
             >
               <Image
-                src="/hero-bg.jpg"
+                src="/bg.jpg"
                 alt="Background"
                 fill
+                sizes="100vw"
                 className="object-cover object-center opacity-40"
                 priority
               />
@@ -113,51 +114,89 @@ export default function Home() {
             variants={staggerContainer}
             initial="initial"
             animate="animate"
-            className="relative z-10 text-center space-y-8 max-w-4xl"
+            className="relative z-10 container mx-auto px-4"
           >
-            <motion.h1 
-              variants={fadeInUp}
-              className="text-6xl md:text-8xl font-bold text-gradient"
-            >
-              John Doe
-            </motion.h1>
-            
-            <motion.p 
-              variants={fadeInUp}
-              className="text-xl md:text-2xl text-foreground/90"
-            >
-              Full-Stack Developer with a passion for creating beautiful, user-centric digital experiences
-            </motion.p>
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+              {/* Text Content */}
+              <div className="flex-1 text-center lg:text-left space-y-8 max-w-2xl">
+                <div className="space-y-8">
+                  <motion.h1 
+                    variants={fadeInUp}
+                    className="text-5xl md:text-7xl font-bold text-gradient"
+                  >
+                    Kacper Margol
+                  </motion.h1>
+                  
+                  <motion.p 
+                    variants={fadeInUp}
+                    className="text-xl md:text-2xl text-foreground/90"
+                  >
+                    Junior Full-Stack Developer with a passion for creating beautiful, user-centric digital experiences
+                  </motion.p>
+                </div>
 
-            <motion.div
-              variants={fadeInUp}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            >
-              <Link 
-                href="#projects"
-                className="px-8 py-3 text-lg font-semibold gradient-border glass-effect
-                  transition-all duration-1000 hover:scale-105 hover:shadow-lg hover:shadow-primary/20
-                  group relative overflow-hidden"
-              >
-                <span className="relative z-10">View My Work</span>
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20"
-                  initial={{ x: '-100%' }}
-                  whileHover={{ x: '100%' }}
-                  transition={{ 
-                    duration: 1.5,
-                    ease: [0.22, 1, 0.36, 1]
+                  variants={fadeInUp}
+                  className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center pt-6"
+                >
+                  <Link 
+                    href="#projects"
+                    className="px-8 py-3 text-lg font-semibold gradient-border glass-effect
+                      transition-all duration-1000 hover:scale-105 hover:shadow-lg hover:shadow-primary/20
+                      group relative overflow-hidden"
+                  >
+                    <span className="relative z-10">View My Work</span>
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20"
+                      initial={{ x: '-100%' }}
+                      whileHover={{ x: '100%' }}
+                      transition={{ 
+                        duration: 1.5,
+                        ease: [0.22, 1, 0.36, 1]
+                      }}
+                    />
+                  </Link>
+                  <Link 
+                    href="#contact"
+                    className="px-8 py-3 text-lg font-semibold text-primary hover:text-accent
+                      transition-all duration-1000"
+                  >
+                    Get in Touch
+                  </Link>
+                </motion.div>
+              </div>
+
+              {/* Profile Image */}
+              <motion.div
+                variants={fadeIn}
+                className="relative w-64 h-64 md:w-96 md:h-96"
+              >
+                <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-pulse" />
+                <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary">
+                  <Image
+                    src="/Profile.jpg"
+                    alt="Kacper Margol"
+                    fill
+                    sizes="(max-width: 768px) 256px, 384px"
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20" />
+                </div>
+                <motion.div
+                  className="absolute -inset-4 rounded-full border border-primary/20"
+                  animate={{
+                    scale: [1, 1.05, 1],
+                    opacity: [0.3, 0.5, 0.3],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
                   }}
                 />
-              </Link>
-              <Link 
-                href="#contact"
-                className="px-8 py-3 text-lg font-semibold text-primary hover:text-accent
-                  transition-all duration-1000"
-              >
-                Get in Touch
-              </Link>
-            </motion.div>
+              </motion.div>
+            </div>
           </motion.div>
 
           {/* Scroll Indicator */}
