@@ -59,8 +59,16 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-black">
-      <div className="container mx-auto px-4">
+    <section 
+      id="contact" 
+      className="relative py-20 overflow-hidden"
+    >
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-primary/10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.1),rgba(255,255,255,0))]" />
+      </div>
+
+      <div className="container relative mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -70,7 +78,7 @@ export default function Contact() {
           Get In Touch
         </motion.h2>
 
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-2xl mx-auto backdrop-blur-sm rounded-xl p-8 border border-primary/10">
           <motion.form
             ref={formRef}
             onSubmit={handleSubmit}
@@ -95,9 +103,9 @@ export default function Contact() {
                 id="name"
                 name="user_name"
                 required
-                className="w-full px-4 py-3 bg-secondary/50 border border-primary/20 rounded-lg
-                  text-foreground placeholder-foreground/50 focus:border-primary focus:outline-none
-                  transition-colors"
+                className="w-full px-4 py-3 bg-black/50 border border-primary/20 rounded-lg
+                  text-foreground placeholder-foreground/50 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none
+                  transition-all duration-300"
                 placeholder="Your name"
               />
             </motion.div>
@@ -111,9 +119,9 @@ export default function Contact() {
                 id="email"
                 name="user_email"
                 required
-                className="w-full px-4 py-3 bg-secondary/50 border border-primary/20 rounded-lg
-                  text-foreground placeholder-foreground/50 focus:border-primary focus:outline-none
-                  transition-colors"
+                className="w-full px-4 py-3 bg-black/50 border border-primary/20 rounded-lg
+                  text-foreground placeholder-foreground/50 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none
+                  transition-all duration-300"
                 placeholder="your@email.com"
               />
             </motion.div>
@@ -127,9 +135,9 @@ export default function Contact() {
                 name="message"
                 required
                 rows={5}
-                className="w-full px-4 py-3 bg-secondary/50 border border-primary/20 rounded-lg
-                  text-foreground placeholder-foreground/50 focus:border-primary focus:outline-none
-                  transition-colors resize-none"
+                className="w-full px-4 py-3 bg-black/50 border border-primary/20 rounded-lg
+                  text-foreground placeholder-foreground/50 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none
+                  transition-all duration-300 resize-none"
                 placeholder="Your message..."
               />
             </motion.div>
@@ -139,8 +147,12 @@ export default function Contact() {
                 type="submit"
                 disabled={isSubmitting}
                 className="w-full py-3 px-8 gradient-border glass-effect font-semibold
-                  transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20
-                  disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/20
+                  disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100
+                  bg-gradient-to-r from-primary via-primary/50 to-primary/30
+                  text-black dark:text-white font-bold relative overflow-hidden
+                  before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/10 before:to-transparent
+                  before:translate-y-full hover:before:translate-y-0 before:transition-transform before:duration-300"
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
@@ -150,7 +162,7 @@ export default function Contact() {
                 <motion.p
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="mt-4 text-center text-green-500"
+                  className="mt-4 text-center text-primary font-semibold"
                 >
                   Message sent successfully!
                 </motion.p>
@@ -159,7 +171,7 @@ export default function Contact() {
                 <motion.p
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="mt-4 text-center text-red-500"
+                  className="mt-4 text-center text-red-400 font-semibold"
                 >
                   Failed to send message. Please try again.
                 </motion.p>

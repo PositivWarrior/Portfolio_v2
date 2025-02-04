@@ -51,13 +51,18 @@ const itemVariants = {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 bg-black">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="relative py-20 overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-primary/10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.1),rgba(255,255,255,0))]" />
+      </div>
+
+      <div className="container relative mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold text-gold text-center mb-12"
+          className="text-4xl font-bold text-gradient text-center mb-12"
         >
           Featured Projects
         </motion.h2>
@@ -73,8 +78,8 @@ export default function Projects() {
             <motion.div
               key={project.title}
               variants={itemVariants}
-              className="group relative bg-secondary/50 rounded-lg overflow-hidden
-                border border-gold/20 hover:border-gold/50 transition-colors"
+              className="group relative backdrop-blur-sm rounded-xl overflow-hidden
+                gradient-border glass-effect hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
             >
               {/* Project Image */}
               <div className="relative h-48">
@@ -89,15 +94,16 @@ export default function Projects() {
 
               {/* Project Info */}
               <div className="p-6 space-y-4">
-                <h3 className="text-xl font-semibold text-gold">{project.title}</h3>
-                <p className="text-gold/80">{project.description}</p>
+                <h3 className="text-xl font-semibold text-gradient">{project.title}</h3>
+                <p className="text-foreground/80">{project.description}</p>
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 text-sm bg-gold/10 text-gold/90 rounded-full"
+                      className="px-3 py-1 text-sm bg-primary/10 text-primary/90 rounded-full
+                        border border-primary/20"
                     >
                       {tag}
                     </span>
@@ -110,7 +116,7 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gold/80 hover:text-gold transition-colors"
+                    className="text-primary/80 hover:text-primary transition-colors"
                   >
                     <FaGithub className="w-6 h-6" />
                   </a>
@@ -118,7 +124,7 @@ export default function Projects() {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gold/80 hover:text-gold transition-colors"
+                    className="text-primary/80 hover:text-primary transition-colors"
                   >
                     <FaExternalLinkAlt className="w-5 h-5" />
                   </a>
