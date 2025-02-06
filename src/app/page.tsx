@@ -76,14 +76,14 @@ export default function Home() {
 							}}
 							className="relative w-full h-full hero-image-mask"
 						>
-							<Image
-								// src="/bg.jpg"
-								alt="Background"
-								fill
-								sizes="100vw"
-								className="object-cover object-center opacity-40"
-								priority
-							/>
+							{/* <Image
+                src="/bg.jpg"
+                alt="Background"
+                fill
+                sizes="100vw"
+                className="object-cover object-center opacity-40"
+                priority
+              /> */}
 						</motion.div>
 					</div>
 
