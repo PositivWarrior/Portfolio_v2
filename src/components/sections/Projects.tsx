@@ -42,7 +42,7 @@ const projects = [
 	{
 		title: 'AI Content Generator',
 		description: 'An AI-powered content generation tool using OpenAI API.',
-		image: '/project3-placeholder.jpg',
+		image: '',
 		github: '#',
 		live: '#',
 		tags: ['React', 'Python', 'OpenAI'],
