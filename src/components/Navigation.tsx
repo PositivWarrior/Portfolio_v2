@@ -89,7 +89,7 @@ export default function Navigation() {
 
 					{/* Mobile Menu */}
 					<motion.div
-						className={`fixed inset-0 glass-effect md:hidden ${
+						className={`fixed inset-0 bg-transparent md:hidden ${
 							isMobileMenuOpen ? 'block' : 'hidden'
 						}`}
 						initial={{ opacity: 0 }}

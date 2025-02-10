@@ -143,6 +143,14 @@ export default function Home() {
 								>
 									<Link
 										href="#projects"
+										onClick={(e) => {
+											e.preventDefault();
+											document
+												.querySelector('#projects')
+												?.scrollIntoView({
+													behavior: 'smooth',
+												});
+										}}
 										className="px-8 py-3 text-lg font-semibold gradient-border glass-effect
                       transition-all duration-1000 hover:scale-105 hover:shadow-lg hover:shadow-primary/20
                       group relative overflow-hidden"
@@ -162,6 +170,14 @@ export default function Home() {
 									</Link>
 									<Link
 										href="#contact"
+										onClick={(e) => {
+											e.preventDefault();
+											document
+												.querySelector('#contact')
+												?.scrollIntoView({
+													behavior: 'smooth',
+												});
+										}}
 										className="px-8 py-3 text-lg font-semibold text-primary hover:text-accent
                       transition-all duration-1000"
 									>

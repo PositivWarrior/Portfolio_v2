@@ -25,7 +25,7 @@ const projects = [
 		],
 	},
 	{
-		title: 'MLVri',
+		title: 'LukMeg',
 		description:
 			'A simple page for a moving/renovation company with smooth animations and email integration.',
 		image: '/MLVri.png',
