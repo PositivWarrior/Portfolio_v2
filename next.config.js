@@ -5,8 +5,20 @@ const nextConfig = {
 	output: 'export',
 	images: {
 		unoptimized: true,
+		domains: ['kacpermargol.eu'],
 	},
 	trailingSlash: true,
+	experimental: {
+		optimizeFonts: true,
+		optimizeImages: true,
+		scrollRestoration: true,
+	},
+	crossOrigin: 'anonymous',
+	poweredByHeader: false,
+	webpack: (config) => {
+		config.resolve.fallback = { fs: false };
+		return config;
+	},
 };
 
 module.exports = nextConfig;

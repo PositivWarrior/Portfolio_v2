@@ -1,25 +1,31 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import '../styles/globals.css'
+import type { Metadata } from 'next';
+import { Inter, Cinzel_Decorative } from 'next/font/google';
+import '../styles/globals.css';
 
-const inter = Inter({ subsets: ['latin'] })
+const cinzel = Cinzel_Decorative({
+	subsets: ['latin'],
+	display: 'swap',
+	weight: ['700'], // Make sure it's an array
+	preload: true,
+	variable: '--font-cinzel',
+});
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Portfolio | Junior Full-Stack Developer',
-  description: 'Junior Full-Stack Developer with a passion for design and modern web technologies',
-}
-
+	title: 'Portfolio | Junior Full-Stack Developer',
+	description:
+		'Junior Full-Stack Developer with a passion for design and modern web technologies',
+};
 
 export default function RootLayout({
-  children,
+	children,
 }: {
-  children: React.ReactNode
+	children: React.ReactNode;
 }) {
-  return (
-    <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>
-        {children}
-      </body>
-    </html>
-  )
-} 
+	return (
+		<html lang="en" className={`scroll-smooth ${cinzel.variable}`}>
+			<body className={inter.className}>{children}</body>
+		</html>
+	);
+}

@@ -1,0 +1,27 @@
+/* Add these to your existing CSS */
+html {
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.text-gradient {
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+}
+
+@layer base {
+	:root {
+		--font-cinzel: 'Cinzel Decorative', cursive;
+	}
+}
+
+.font-cinzel {
+	font-family: var(--font-cinzel);
+	letter-spacing: 0.05em; /* Add some letter spacing for better readability */
+}

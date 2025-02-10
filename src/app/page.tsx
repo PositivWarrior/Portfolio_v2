@@ -122,7 +122,7 @@ export default function Home() {
 								<div className="space-y-2">
 									<motion.h1
 										variants={fadeInUp}
-										className="text-5xl md:text-7xl font-bold text-gradient p-10"
+										className="text-5xl md:text-7xl font-bold text-gradient mt-24 md:mt-32 p-10 font-cinzel"
 									>
 										Kacper Margol
 									</motion.h1>
