@@ -1,3 +1,6 @@
+/* Import fonts at the top of the file */
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&family=Dancing+Script:wght@400..700&family=Eagle+Lake&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 /* Add these to your existing CSS */
 html {
 	-webkit-text-size-adjust: 100%;
@@ -8,20 +11,37 @@ html {
 }
 
 .text-gradient {
-	background-clip: text;
+	background: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
 	-webkit-background-clip: text;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
-	-moz-background-clip: text;
-	-moz-text-fill-color: transparent;
 }
 
 @layer base {
 	:root {
-		--font-cinzel: 'Cinzel Decorative', cursive;
+		--font-dancing: 'Dancing Script', cursive;
+		--font-eagle-lake: 'Eagle Lake', cursive;
 	}
 }
 
 .font-cinzel {
 	font-family: var(--font-cinzel);
 	letter-spacing: 0.05em; /* Add some letter spacing for better readability */
+}
+
+.font-arizonia {
+	font-family: var(--font-arizonia), 'Arizonia', cursive;
+	letter-spacing: 0.02em;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+/* Add specific styling for the name */
+.name-title {
+	font-family: 'Eagle Lake', cursive !important;
+	font-weight: 400;
+	letter-spacing: 0.02em;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }

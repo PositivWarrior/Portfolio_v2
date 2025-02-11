@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { fadeInUp } from '@/lib/animations';
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const testimonials = [
 	{
@@ -88,15 +87,8 @@ export default function Testimonials() {
 						</motion.div>
 					</div>
 
-					{/* Navigation Buttons */}
+					{/* Updated Navigation Dots */}
 					<div className="flex justify-center items-center gap-4 mt-8">
-						<button
-							onClick={prev}
-							className="p-2 rounded-full hover:bg-primary/10 transition-colors"
-							aria-label="Previous testimonial"
-						>
-							<ChevronLeft className="w-6 h-6" />
-						</button>
 						{testimonials.map((_, index) => (
 							<button
 								key={index}
@@ -104,21 +96,18 @@ export default function Testimonials() {
 									setIsAutoPlaying(false);
 									setCurrent(index);
 								}}
-								className={`w-2 h-2 rounded-full transition-colors ${
-									current === index
-										? 'bg-primary'
-										: 'bg-primary/30'
-								}`}
+								className="group relative"
 								aria-label={`Go to testimonial ${index + 1}`}
-							/>
+							>
+								<div
+									className={`w-2 h-2 rounded-full transition-all duration-300 ${
+										current === index
+											? 'w-8 bg-primary'
+											: 'bg-primary/30 group-hover:bg-primary/50'
+									}`}
+								/>
+							</button>
 						))}
-						<button
-							onClick={next}
-							className="p-2 rounded-full hover:bg-primary/10 transition-colors"
-							aria-label="Next testimonial"
-						>
-							<ChevronRight className="w-6 h-6" />
-						</button>
 					</div>
 				</div>
 			</div>

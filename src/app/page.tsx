@@ -9,6 +9,19 @@ import Projects from '@/components/sections/Projects';
 import Testimonials from '@/components/sections/Testimonials';
 import Contact from '@/components/sections/Contact';
 import Typewriter from 'typewriter-effect';
+import { Dancing_Script, Eagle_Lake } from 'next/font/google';
+
+const dancingScript = Dancing_Script({
+	subsets: ['latin'],
+	weight: '700',
+	display: 'swap',
+});
+
+const eagleLake = Eagle_Lake({
+	subsets: ['latin'],
+	weight: '400',
+	display: 'swap',
+});
 
 const fadeInUp = {
 	initial: {
@@ -123,7 +136,7 @@ export default function Home() {
 								<div className="space-y-2">
 									<motion.h1
 										variants={fadeInUp}
-										className="text-5xl md:text-7xl font-bold text-gradient mt-24 md:mt-32 p-10 font-cinzel"
+										className="text-6xl md:text-8xl text-gradient mt-24 md:mt-32 p-10 name-title"
 									>
 										Kacper Margol
 									</motion.h1>
@@ -135,15 +148,19 @@ export default function Home() {
 										<Typewriter
 											options={{
 												strings: [
-													'Junior Full-Stack Developer',
-													'React & Next.js Enthusiast',
-													'UI/UX Design Passionate',
-													'Problem Solver',
+													'Turning Problems into Solutions',
+													'Where Code Meets Design',
+													'React & Next.js Developer',
+													'Crafting Clean Code',
+													'Building Interactive Experiences',
+													'Driven by Curiosity and Code',
+													'Transforming Ideas into Reality',
+													'Your Friendly Debugging Expert',
 												],
 												autoStart: true,
 												loop: true,
-												delay: 50,
-												deleteSpeed: 30,
+												delay: 40,
+												deleteSpeed: 20,
 											}}
 										/>
 									</motion.div>

@@ -1,13 +1,12 @@
 import type { Metadata } from 'next';
-import { Inter, Cinzel_Decorative } from 'next/font/google';
+import { Inter, Eagle_Lake } from 'next/font/google';
 import '../styles/globals.css';
 
-const cinzel = Cinzel_Decorative({
+const eagleLake = Eagle_Lake({
 	subsets: ['latin'],
+	weight: '400',
 	display: 'swap',
-	weight: ['700'], // Make sure it's an array
-	preload: true,
-	variable: '--font-cinzel',
+	variable: '--font-eagle-lake',
 });
 
 const inter = Inter({ subsets: ['latin'] });
@@ -24,8 +23,8 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" className={`scroll-smooth ${cinzel.variable}`}>
-			<body className={inter.className}>{children}</body>
+		<html lang="en" className={`scroll-smooth ${eagleLake.variable}`}>
+			<body className={`${inter.className}`}>{children}</body>
 		</html>
 	);
 }
