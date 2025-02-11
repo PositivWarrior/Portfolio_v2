@@ -9,8 +9,6 @@ const nextConfig = {
 	},
 	trailingSlash: true,
 	experimental: {
-		optimizeFonts: true,
-		optimizeImages: true,
 		scrollRestoration: true,
 	},
 	crossOrigin: 'anonymous',

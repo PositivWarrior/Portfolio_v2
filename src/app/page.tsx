@@ -8,6 +8,7 @@ import About from '@/components/sections/About';
 import Projects from '@/components/sections/Projects';
 import Testimonials from '@/components/sections/Testimonials';
 import Contact from '@/components/sections/Contact';
+import Typewriter from 'typewriter-effect';
 
 const fadeInUp = {
 	initial: {
@@ -127,14 +128,25 @@ export default function Home() {
 										Kacper Margol
 									</motion.h1>
 
-									<motion.p
+									<motion.div
 										variants={fadeInUp}
-										className="text-xl md:text-2xl text-foreground/90"
+										className="text-xl md:text-2xl text-foreground/90 h-20"
 									>
-										Junior Full-Stack Developer with a
-										passion for creating beautiful,
-										user-centric digital experiences
-									</motion.p>
+										<Typewriter
+											options={{
+												strings: [
+													'Junior Full-Stack Developer',
+													'React & Next.js Enthusiast',
+													'UI/UX Design Passionate',
+													'Problem Solver',
+												],
+												autoStart: true,
+												loop: true,
+												delay: 50,
+												deleteSpeed: 30,
+											}}
+										/>
+									</motion.div>
 								</div>
 
 								<motion.div
