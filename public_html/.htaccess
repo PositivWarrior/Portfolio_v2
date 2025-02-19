@@ -2,14 +2,44 @@
     RewriteEngine On
     RewriteBase /
     
-    # Handle font files correctly
-    RewriteCond %{REQUEST_URI} \.(woff|woff2|ttf|eot)$
-    RewriteRule .* - [E=Cache-Control:max-age=31536000]
+    # Handle static files in _next directory
+    RewriteCond %{REQUEST_URI} ^/_next/static/(.+)$
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ /_next/static/$1 [L]
     
-    # If the request is not for a valid file or directory
+    # Default rule
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ index.html [L]
+    RewriteRule ^(.*)$ /index.html [L]
+</IfModule>
+
+# Proper MIME types
+
+AddType application/javascript .js
+AddType text/css .css
+AddType application/json .json
+
+# Enable CORS
+
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set X-Content-Type-Options "nosniff"
+    
+    # Set correct content type for JavaScript files
+    <FilesMatch "\.(js)$">
+        Header set Content-Type "application/javascript"
+    </FilesMatch>
+    
+    # Set caching headers for static files
+    <FilesMatch "\.(js|css|json)$">
+        Header set Cache-Control "public, max-age=31536000"
+    </FilesMatch>
+</IfModule>
+
+# Enable compression
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json
 </IfModule>
 
 # Enable CORS with specific settings for Safari
@@ -32,8 +62,6 @@
 # Proper MIME types for all files
 
 AddDefaultCharset UTF-8
-AddType application/javascript .js .mjs
-AddType text/css .css
 AddType image/svg+xml .svg .svgz
 AddType image/png .png
 AddType image/jpeg .jpg .jpeg
@@ -41,17 +69,7 @@ AddType image/gif .gif
 AddType image/webp .webp
 AddType font/woff .woff
 AddType font/woff2 .woff2
-AddType application/json .json
 AddType text/html .html .htm
-
-# Compression for better performance
-
-<IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json image/svg+xml font/woff font/woff2
-    BrowserMatch ^Mozilla/4 gzip-only-text/html
-    BrowserMatch ^Mozilla/4\.0[678] no-gzip
-    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
-</IfModule>
 
 # Cache settings
 
@@ -65,3 +83,8 @@ AddType text/html .html .htm
     ExpiresByType text/css "access plus 1 month"
     ExpiresByType application/javascript "access plus 1 month"
 </IfModule>
+
+<FilesMatch "\.js$">
+ForceType application/javascript
+Header set Content-Type application/javascript
+</FilesMatch>

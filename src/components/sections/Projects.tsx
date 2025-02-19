@@ -45,7 +45,7 @@ const projects = [
 		description: 'Personolized photographer portfolio with admin panel',
 		image: '/FotoDS.png',
 		github: 'https://github.com/PositivWarrior/dsphoto',
-		live: 'https://dsphoto.vercel.app/',
+		live: 'https://fotods.no/',
 		tags: [
 			'React 18',
 			'Tailwind CSS',
