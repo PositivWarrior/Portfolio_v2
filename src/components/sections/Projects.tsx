@@ -61,6 +61,44 @@ const projects = [
 			'Multer',
 		],
 	},
+	{
+		title: 'CV Mentor',
+		description:
+			'AI-powered resume builder to create professional resumes quickly and easily.',
+		image: '/CVMentor_screen.png',
+		github: 'https://github.com/PositivWarrior/cv_mentor',
+		live: 'https://cv-mentor.vercel.app/',
+		tags: [
+			'Next.js',
+			'React',
+			'Tailwind CSS',
+			'Shadcn UI',
+			'PostgreSQL',
+			'Prisma',
+			'Clerk',
+			'OpenAI',
+			'Stripe',
+			'Zustand',
+			'React Hook Form',
+			'Zod',
+		],
+	},
+	{
+		title: 'MKDoc',
+		description:
+			'Generate professional PDF price estimations and email them to clients.',
+		image: '/VerdivurderingLukMeg.png',
+		github: 'https://github.com/PositivWarrior/MKDoc',
+		live: 'https://mk-doc.vercel.app/',
+		tags: [
+			'React',
+			'Vite',
+			'Tailwind CSS',
+			'Firebase Storage',
+			'@react-pdf/renderer',
+			'EmailJS',
+		],
+	},
 ];
 
 const containerVariants = {
