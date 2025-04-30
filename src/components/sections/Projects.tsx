@@ -6,38 +6,25 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const projects = [
 	{
-		title: 'Marblogger',
+		title: 'CV Mentor',
 		description:
-			'MERN stack blog app with authentication, user management, and CRUD operations for blog posts.',
-		image: '/marblogger.png',
-		github: 'https://github.com/PositivWarrior/mern-blog',
-		live: 'https://marblogger.onrender.com/',
+			'AI-powered resume builder to create professional resumes quickly and easily.',
+		image: '/CVMentor_screen.png',
+		github: 'https://github.com/PositivWarrior/cv_mentor',
+		live: 'https://cv-mentor.vercel.app/',
 		tags: [
+			'Next.js',
 			'React',
-			'Redux',
-			'Node.js',
-			'Express',
-			'MongoDB',
-			'JWT',
-			'Firebase',
-			'Mongoose',
-			'bcrypt.js',
-		],
-	},
-	{
-		title: 'LukMeg',
-		description:
-			'A simple page for a moving/renovation company with smooth animations and email integration.',
-		image: '/MLVri.png',
-		github: 'https://github.com/PositivWarrior/mlvri',
-		live: 'https://mlvri.vercel.app/',
-		tags: [
-			'React.js',
 			'Tailwind CSS',
-			'Framer Motion',
-			'EmailJS',
-			'Heroicons',
-			'Firebase',
+			'Shadcn UI',
+			'PostgreSQL',
+			'Prisma',
+			'Clerk',
+			'OpenAI',
+			'Stripe',
+			'Zustand',
+			'React Hook Form',
+			'Zod',
 		],
 	},
 	{
@@ -62,25 +49,36 @@ const projects = [
 		],
 	},
 	{
-		title: 'CV Mentor',
+		title: 'GawlakTrans',
 		description:
-			'AI-powered resume builder to create professional resumes quickly and easily.',
-		image: '/CVMentor_screen.png',
-		github: 'https://github.com/PositivWarrior/cv_mentor',
-		live: 'https://cv-mentor.vercel.app/',
+			'Professional transport company website (Poland-Scandinavia).',
+		image: '/About.png', // Assuming this path is correct in /public
+		github: 'https://github.com/PositivWarrior/gawlaktrans', // Placeholder - please confirm/update
+		live: 'gawlaktrans.eu', // Placeholder - please provide live site URL
 		tags: [
-			'Next.js',
 			'React',
+			'Vite',
+			'TypeScript',
+			'shadcn/ui',
 			'Tailwind CSS',
-			'Shadcn UI',
-			'PostgreSQL',
-			'Prisma',
-			'Clerk',
-			'OpenAI',
-			'Stripe',
-			'Zustand',
-			'React Hook Form',
-			'Zod',
+			'React Router DOM',
+			'Firebase',
+		],
+	},
+	{
+		title: 'LukMeg',
+		description:
+			'A simple page for a moving/renovation company with smooth animations and email integration.',
+		image: '/MLVri.png',
+		github: 'https://github.com/PositivWarrior/mlvri',
+		live: 'https://mlvri.vercel.app/',
+		tags: [
+			'React.js',
+			'Tailwind CSS',
+			'Framer Motion',
+			'EmailJS',
+			'Heroicons',
+			'Firebase',
 		],
 	},
 	{
@@ -97,6 +95,25 @@ const projects = [
 			'Firebase Storage',
 			'@react-pdf/renderer',
 			'EmailJS',
+		],
+	},
+	{
+		title: 'Marblogger',
+		description:
+			'MERN stack blog app with authentication, user management, and CRUD operations for blog posts.',
+		image: '/marblogger.png',
+		github: 'https://github.com/PositivWarrior/mern-blog',
+		live: 'https://marblogger.onrender.com/',
+		tags: [
+			'React',
+			'Redux',
+			'Node.js',
+			'Express',
+			'MongoDB',
+			'JWT',
+			'Firebase',
+			'Mongoose',
+			'bcrypt.js',
 		],
 	},
 ];
