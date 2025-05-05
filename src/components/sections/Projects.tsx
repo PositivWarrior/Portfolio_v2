@@ -52,7 +52,7 @@ const projects = [
 		title: 'GawlakTrans',
 		description:
 			'Professional transport company website (Poland-Scandinavia).',
-		image: '/About.png', // Assuming this path is correct in /public
+		image: '/Gtrans.png', // Assuming this path is correct in /public
 		github: 'https://github.com/PositivWarrior/gawlaktrans', // Placeholder - please confirm/update
 		live: 'gawlaktrans.eu', // Placeholder - please provide live site URL
 		tags: [

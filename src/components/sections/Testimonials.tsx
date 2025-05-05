@@ -17,6 +17,12 @@ const testimonials = [
 		author: 'Dawid Siedlec',
 		role: 'FotoDS',
 	},
+	{
+		content:
+			"Words can't fully express how positive my experience was working with Kacper. His remarkable professionalism combined with flawless professional intuition ensures that anyone who gets the chance to work with him will be pleasantly surprised. Kacper's creativity, along with his positive attitude, is a guaranteed recipe for success and satisfaction with the final product. I wholeheartedly recommend him and sincerely thank him for such a pleasant collaboration.",
+		author: 'Robert Gawlak',
+		role: 'Gawlaktrans',
+	},
 ];
 
 export default function Testimonials() {
