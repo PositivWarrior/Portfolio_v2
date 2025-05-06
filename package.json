@@ -9,7 +9,10 @@
 		"export": "next build",
 		"lint": "next lint",
 		"generate-sitemap": "node scripts/sitemap-generator.js",
-		"prebuild": "npm run generate-sitemap"
+		"prebuild": "npm run generate-sitemap",
+		"test": "jest",
+		"test:watch": "jest --watch",
+		"test:coverage": "jest --coverage"
 	},
 	"keywords": [],
 	"author": "Kacper Margol",
@@ -32,12 +35,18 @@
 		"typewriter-effect": "^2.21.0"
 	},
 	"devDependencies": {
+		"@testing-library/jest-dom": "^6.6.3",
+		"@testing-library/react": "^16.3.0",
+		"@testing-library/user-event": "^14.6.1",
+		"@types/jest": "^29.5.14",
 		"@types/node": "^20.11.17",
 		"@types/react": "^18.2.55",
 		"@types/react-dom": "^18.2.19",
 		"autoprefixer": "^10.4.17",
 		"eslint": "^8.56.0",
 		"eslint-config-next": "14.1.0",
+		"jest": "^29.7.0",
+		"jest-environment-jsdom": "^29.7.0",
 		"postcss": "^8.4.35",
 		"tailwindcss": "^3.4.1",
 		"tailwindcss-animate": "^1.0.7",
