@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://kacpermargol.eu/sitemap.xml 
+# Sitemap locations
+Sitemap: https://kacpermargol.eu/sitemap.xml
+Sitemap: https://kacpermargol.eu/sitemap.xml/
+Sitemap: https://kacpermargol.eu/sitemap2.xml 

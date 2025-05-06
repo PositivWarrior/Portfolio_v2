@@ -18,6 +18,8 @@
 AddType application/javascript .js
 AddType text/css .css
 AddType application/json .json
+AddType application/xml .xml
+AddType text/xml .xml
 
 # Enable CORS
 
@@ -30,16 +32,28 @@ AddType application/json .json
         Header set Content-Type "application/javascript"
     </FilesMatch>
     
+    # Set correct content type for XML files
+    <FilesMatch "\.(xml)$">
+        Header set Content-Type "application/xml"
+    </FilesMatch>
+    
     # Set caching headers for static files
     <FilesMatch "\.(js|css|json)$">
         Header set Cache-Control "public, max-age=31536000"
+    </FilesMatch>
+    
+    # Disable caching for sitemap.xml to ensure fresh content
+    <FilesMatch "sitemap\.xml$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
     </FilesMatch>
 </IfModule>
 
 # Enable compression
 
 <IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json
+    AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json application/xml text/xml
 </IfModule>
 
 # Enable CORS with specific settings for Safari
@@ -57,6 +71,9 @@ AddType application/json .json
     <FilesMatch "\.css$">
         Header set Content-Type "text/css"
     </FilesMatch>
+    <FilesMatch "\.xml$">
+        Header set Content-Type "application/xml"
+    </FilesMatch>
 </IfModule>
 
 # Proper MIME types for all files
@@ -70,6 +87,7 @@ AddType image/webp .webp
 AddType font/woff .woff
 AddType font/woff2 .woff2
 AddType text/html .html .htm
+AddType application/xml .xml
 
 # Cache settings
 
