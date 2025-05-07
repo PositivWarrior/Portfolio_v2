@@ -2,8 +2,7 @@ import { NextResponse } from 'next/server';
 import { ServerClient } from 'postmark';
 
 // Get API key from environment variable
-const postmarkApiKey =
-	process.env.POSTMARK_API_KEY || '3978cfc4-38aa-43f6-84fb-8f653e1fe457';
+const postmarkApiKey = process.env.POSTMARK_API_KEY;
 
 // Force dynamic route handling
 export const dynamic = 'force-dynamic';
