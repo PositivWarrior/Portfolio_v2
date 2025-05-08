@@ -21,18 +21,30 @@ export async function POST(request: Request) {
 			);
 		}
 
+		if (!postmarkApiKey) {
+			console.error('Postmark API key is not configured.');
+			return NextResponse.json(
+				{ error: 'Email service is not configured.' },
+				{ status: 500 },
+			);
+		}
+
 		// Create the email using Postmark
 		try {
 			console.log('Attempting to send email with Postmark...');
 
+			// Create headers using the Headers API to fix TypeScript issues
+			const headers = new Headers();
+			headers.append('Accept', 'application/json');
+			headers.append('Content-Type', 'application/json');
+			if (postmarkApiKey) {
+				headers.append('X-Postmark-Server-Token', postmarkApiKey);
+			}
+
 			// During pending approval, sender and recipient must have the same domain
 			const response = await fetch('https://api.postmarkapp.com/email', {
 				method: 'POST',
-				headers: {
-					Accept: 'application/json',
-					'Content-Type': 'application/json',
-					'X-Postmark-Server-Token': postmarkApiKey,
-				},
+				headers: headers,
 				body: JSON.stringify({
 					From: 'contact@kacpermargol.eu', // Your verified professional email
 					To: 'contact@kacpermargol.eu', // Using the same email as sender during pending approval

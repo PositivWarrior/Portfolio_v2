@@ -12,6 +12,7 @@ const eagleLake = Eagle_Lake({
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+	metadataBase: new URL('https://kacpermargol.eu'),
 	title: 'Kacper Margol | Full-Stack Developer Portfolio',
 	description:
 		'Junior Full-Stack Developer with expertise in React, Next.js, Node.js, and modern web technologies. View my projects and skills.',
