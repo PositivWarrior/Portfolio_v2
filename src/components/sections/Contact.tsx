@@ -55,7 +55,9 @@ export default function ContactNew() {
 			};
 
 			// Send email using Postmark API
-			const apiUrl = process.env.NEXT_PUBLIC_EMAIL_API_URL;
+			const apiUrl =
+				process.env.NEXT_PUBLIC_EMAIL_API_URL ||
+				'https://portfolio-v2-backend-email.onrender.com';
 
 			if (!apiUrl) {
 				console.error('Email API URL is not configured.');

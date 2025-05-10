@@ -5,7 +5,9 @@ import { useEffect } from 'react';
 export default function WarmUpService() {
 	useEffect(() => {
 		const warmUp = async () => {
-			const apiUrl = process.env.NEXT_PUBLIC_EMAIL_API_URL;
+			const apiUrl =
+				process.env.NEXT_PUBLIC_EMAIL_API_URL ||
+				'https://portfolio-v2-backend-email.onrender.com';
 			if (!apiUrl) {
 				// console.log('Email API URL for warm-up not configured.');
 				return;

@@ -7,7 +7,7 @@ import Navigation from '@/components/Navigation';
 import About from '@/components/sections/About';
 import Projects from '@/components/sections/Projects';
 import Testimonials from '@/components/sections/Testimonials';
-import ContactNew from '@/components/sections/Contact';
+import Contact from '@/components/sections/Contact';
 import Typewriter from 'typewriter-effect';
 import { Dancing_Script, Eagle_Lake } from 'next/font/google';
 
@@ -277,7 +277,7 @@ export default function Home() {
 				<About />
 				<Projects />
 				<Testimonials />
-				<ContactNew />
+				<Contact />
 			</main>
 		</>
 	);
