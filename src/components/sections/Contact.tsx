@@ -76,7 +76,9 @@ export default function ContactNew() {
 
 			if (response.ok) {
 				setSubmitStatus('success');
-				form.reset();
+				if (formRef.current) {
+					formRef.current.reset();
+				}
 			} else {
 				const errorData = await response.json();
 				console.error('Email sending failed:', errorData);
