@@ -22,7 +22,7 @@ const inputVariants = {
 	visible: { opacity: 1, y: 0 },
 };
 
-export default function Contact() {
+export default function ContactNew() {
 	const formRef = useRef<HTMLFormElement>(null);
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [submitStatus, setSubmitStatus] = useState<
@@ -31,21 +31,40 @@ export default function Contact() {
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
-		if (!formRef.current) return;
 
 		try {
 			setIsSubmitting(true);
 			setSubmitStatus('idle');
 
-			const formData = new FormData(formRef.current);
+			// Get form data manually instead of using FormData
+			const form = e.target as HTMLFormElement;
+			const nameInput = form.querySelector(
+				'[name="user_name"]',
+			) as HTMLInputElement;
+			const emailInput = form.querySelector(
+				'[name="user_email"]',
+			) as HTMLInputElement;
+			const messageInput = form.querySelector(
+				'[name="message"]',
+			) as HTMLTextAreaElement;
+
 			const data = {
-				name: formData.get('user_name'),
-				email: formData.get('user_email'),
-				message: formData.get('message'),
+				name: nameInput.value,
+				email: emailInput.value,
+				message: messageInput.value,
 			};
 
 			// Send email using Postmark API
-			const response = await fetch('/api/send-email', {
+			const apiUrl = process.env.NEXT_PUBLIC_EMAIL_API_URL;
+
+			if (!apiUrl) {
+				console.error('Email API URL is not configured.');
+				setSubmitStatus('error');
+				setIsSubmitting(false);
+				return;
+			}
+
+			const response = await fetch(`${apiUrl}/send`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -55,7 +74,7 @@ export default function Contact() {
 
 			if (response.ok) {
 				setSubmitStatus('success');
-				formRef.current.reset();
+				form.reset();
 			} else {
 				const errorData = await response.json();
 				console.error('Email sending failed:', errorData);

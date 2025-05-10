@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Eagle_Lake } from 'next/font/google';
 import '../styles/globals.css';
+import WarmUpService from '@/components/utils/WarmUpService';
 
 const eagleLake = Eagle_Lake({
 	subsets: ['latin'],
@@ -49,7 +50,10 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" className={`scroll-smooth ${eagleLake.variable}`}>
-			<body className={`${inter.className}`}>{children}</body>
+			<body className={`${inter.className}`}>
+				<WarmUpService />
+				{children}
+			</body>
 		</html>
 	);
 }
