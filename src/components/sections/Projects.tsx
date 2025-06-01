@@ -30,7 +30,7 @@ const projects = [
 	{
 		title: 'FotoDS',
 		description: 'Personolized photographer portfolio with admin panel',
-		image: '/FotoDS.png',
+		image: '/FotoDS_v2.png',
 		github: 'https://github.com/PositivWarrior/dsphoto',
 		live: 'https://fotods.no/',
 		tags: [
@@ -52,9 +52,9 @@ const projects = [
 		title: 'GawlakTrans',
 		description:
 			'Professional transport company website (Poland-Scandinavia).',
-		image: '/Gtrans.png', // Assuming this path is correct in /public
-		github: 'https://github.com/PositivWarrior/gawlaktrans', // Placeholder - please confirm/update
-		live: 'gawlaktrans.eu', // Placeholder - please provide live site URL
+		image: '/Gtrans.png',
+		github: 'https://github.com/PositivWarrior/gawlaktrans',
+		live: 'gawlaktrans.eu',
 		tags: [
 			'React',
 			'Vite',
