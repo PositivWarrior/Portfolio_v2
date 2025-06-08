@@ -2,8 +2,22 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { FaReact, FaNodeJs, FaGitAlt, FaDownload } from 'react-icons/fa';
-import { SiTypescript, SiTailwindcss, SiNextdotjs } from 'react-icons/si';
+import {
+	FaReact,
+	FaNodeJs,
+	FaGitAlt,
+	FaDownload,
+	FaLaravel,
+	FaDocker,
+	FaDatabase,
+} from 'react-icons/fa';
+import {
+	SiTypescript,
+	SiTailwindcss,
+	SiNextdotjs,
+	SiSupabase,
+	SiFirebase,
+} from 'react-icons/si';
 
 const skills = [
 	{ icon: FaReact, name: 'React' },
@@ -12,6 +26,9 @@ const skills = [
 	{ icon: FaNodeJs, name: 'Node.js' },
 	{ icon: SiTailwindcss, name: 'Tailwind' },
 	{ icon: FaGitAlt, name: 'Git' },
+	{ icon: FaLaravel, name: 'Laravel' },
+	{ icon: FaDocker, name: 'Docker' },
+	{ icon: FaDatabase, name: 'Databases' },
 ];
 
 const containerVariants = {
