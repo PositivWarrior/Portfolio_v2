@@ -25,12 +25,20 @@ jobs:
             - name: 🛠 Build Portfolio (Next.js Static Export)
               run: npm run build
 
+            - name: 📋 List generated files
+              run: |
+                  echo "Contents of ./out/ directory:"
+                  ls -la ./out/
+                  echo "Total files to upload:"
+                  find ./out/ -type f | wc -l
+
             - name: 📤 Upload Exported Files to Hostinger
               uses: samkirkland/ftp-deploy-action@v4.3.5
-
               with:
                   server: ${{ secrets.FTP_SERVER }}
                   username: ${{ secrets.FTP_USERNAME }}
                   password: ${{ secrets.FTP_PASSWORD }}
                   local-dir: ./out/
-                  server-dir: home/u432051507/domains/kacpermargol.eu/public_html
+                  server-dir: /domains/kacpermargol.eu/public_html/
+                  dry-run: false
+                  log-level: verbose
