@@ -1,0 +1,35 @@
+name: 🚀 Deploy Portfolio to Hostinger
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy:
+        name: Upload frontend via FTP
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: 📦 Checkout Repo
+              uses: actions/checkout@v3
+
+            - name: ⚙️ Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '20'
+
+            - name: 🧪 Install Dependencies
+              run: npm install
+
+            - name: 🛠 Build Portfolio (Next.js Static Export)
+              run: npm run build
+
+            - name: 📤 Upload Exported Files to Hostinger
+              uses: SamKirkland/FTP-Deploy-Action@v4
+              with:
+                  server: ${{ secrets.FTP_SERVER }}
+                  username: ${{ secrets.FTP_USERNAME }}
+                  password: ${{ secrets.FTP_PASSWORD }}
+                  local-dir: ./out
+                  server-dir: ${{ secrets.FTP_TARGET }}/
