@@ -133,10 +133,7 @@ export default function About() {
 							I'm a passionate Full-Stack Developer with expertise
 							in modern web technologies. I love creating
 							beautiful, responsive, and user-friendly
-							applications that solve real-world problems. This is
-							a test for GitHub Actions auto-deployment. TESTING.
-							TEST TEST. tetttttt
-						</motion.p>
+							applications that solve real-world problems.
 
 						{/* Skills Grid */}
 						<motion.div
