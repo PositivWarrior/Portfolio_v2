@@ -134,6 +134,7 @@ export default function About() {
 							in modern web technologies. I love creating
 							beautiful, responsive, and user-friendly
 							applications that solve real-world problems.
+						</motion.p>
 
 						{/* Skills Grid */}
 						<motion.div
