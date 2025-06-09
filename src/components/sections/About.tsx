@@ -134,7 +134,7 @@ export default function About() {
 							in modern web technologies. I love creating
 							beautiful, responsive, and user-friendly
 							applications that solve real-world problems. This is
-							a test for GitHub Actions auto-deployment.
+							a test for GitHub Actions auto-deployment. TESTING
 						</motion.p>
 
 						{/* Skills Grid */}
