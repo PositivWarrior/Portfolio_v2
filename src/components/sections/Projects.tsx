@@ -6,6 +6,29 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const projects = [
 	{
+		title: 'Invoiceo',
+		description:
+			'Professional invoice management application with real-time analytics, automated email delivery, and comprehensive PDF generation.',
+		image: '/invoiceo-hero.png',
+		github: 'https://github.com/Kacper-Margol/Invoiceo',
+		live: 'https://invoiceo-xi.vercel.app/',
+		tags: [
+			'Next.js 15',
+			'React 19',
+			'TypeScript',
+			'PostgreSQL',
+			'Prisma',
+			'NextAuth.js',
+			'Tailwind CSS',
+			'shadcn/ui',
+			'Radix UI',
+			'Zod',
+			'jsPDF',
+			'Mailtrap',
+			'Recharts',
+		],
+	},
+	{
 		title: 'CV Mentor',
 		description:
 			'AI-powered resume builder to create professional resumes quickly and easily.',
