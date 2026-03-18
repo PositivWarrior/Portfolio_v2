@@ -54,7 +54,7 @@ const itemVariants = {
 
 export default function About() {
 	const handleDownloadCV = () => {
-		const cvUrl = '/Kacper Margol DEV CV EN.pdf';
+		const cvUrl = '/Kacper_Margol_Fullstack_CV_EN.pdf';
 		window.open(cvUrl, '_blank');
 	};
 

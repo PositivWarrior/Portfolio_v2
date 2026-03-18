@@ -40,5 +40,8 @@ jobs:
                   password: ${{ secrets.FTP_PASSWORD }}
                   local-dir: ./out/
                   server-dir: /domains/kacpermargol.eu/public_html/
+                  protocol: ftp
+                  port: 21
+                  timeout: 190000
                   dry-run: false
                   log-level: verbose
