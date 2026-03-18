@@ -6,6 +6,22 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const projects = [
 	{
+		title: 'Komfort Premium',
+		description:
+			'A completely rewritten, modern, and multilingual (PL/EN) business showcase website built with Next.js 16 for extreme performance and maximum SEO optimization.',
+		image: '/komfort-premium.png',
+		github: 'https://github.com/PositivWarrior/komfort_premium_v2',
+		live: 'https://komfortpremium.eu',
+		tags: [
+			'Next.js 16',
+			'React 19',
+			'Vanilla CSS',
+			'Static Export (SSG)',
+			'i18n',
+			'Google Maps API',
+		],
+	},
+	{
 		title: 'Invoiceo',
 		description:
 			'Professional invoice management application with real-time analytics, automated email delivery, and comprehensive PDF generation.',
