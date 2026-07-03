@@ -45,6 +45,52 @@ const projects = [
 		],
 	},
 	{
+		title: 'Kakefiesta',
+		description:
+			'Elegant multilingual website for a custom cake studio with a Sanity-powered gallery, reviews, pricing content, and practical SEO automation.',
+		image: '/kakefiesta.png',
+		github: '',
+		live: 'https://www.kakefiesta.no',
+		tags: [
+			'React 19',
+			'TypeScript',
+			'TanStack Start',
+			'TanStack Router',
+			'TanStack Query',
+			'Vite',
+			'Tailwind CSS 4',
+			'Sanity CMS',
+			'Radix UI',
+			'i18n',
+			'SEO Automation',
+			'Cloudflare',
+		],
+	},
+	{
+		title: 'Pann-Malg',
+		description:
+			'Modern company website for a Polish paint roller manufacturer with SSR, product pages, gallery, SEO automation, and an email inquiry form.',
+		image: '/pann-malg.png',
+		github: '',
+		live: 'https://pann-malg.eu',
+		tags: [
+			'React 19',
+			'TypeScript',
+			'TanStack Start',
+			'TanStack Router',
+			'Vite 7',
+			'Tailwind CSS 4',
+			'Radix UI',
+			'shadcn/ui',
+			'Cloudflare Workers',
+			'Resend',
+			'Zod',
+			'React Hook Form',
+			'SEO',
+			'Security Headers',
+		],
+	},
+	{
 		title: 'CV Mentor',
 		description:
 			'AI-powered resume builder to create professional resumes quickly and easily.',
@@ -242,14 +288,16 @@ export default function Projects() {
 
 								{/* Links */}
 								<div className="flex gap-4 pt-4">
-									<a
-										href={project.github}
-										target="_blank"
-										rel="noopener noreferrer"
-										className="text-primary/80 hover:text-primary transition-colors"
-									>
-										<FaGithub className="w-6 h-6" />
-									</a>
+									{project.github && (
+										<a
+											href={project.github}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="text-primary/80 hover:text-primary transition-colors"
+										>
+											<FaGithub className="w-6 h-6" />
+										</a>
+									)}
 									<a
 										href={project.live}
 										target="_blank"

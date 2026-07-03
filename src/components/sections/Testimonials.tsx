@@ -23,6 +23,12 @@ const testimonials = [
 		author: 'Robert Gawlak',
 		role: 'GawlakTrans',
 	},
+	{
+		content:
+			'Working together on our website was completely seamless. The project was delivered on time, with full professionalism and a deep understanding of our business needs. Kacper showed not only excellent technical knowledge, but also creativity, suggesting solutions that went far beyond our initial expectations. The website is lightning-fast, intuitive for users, and very well optimized technically. Communication also deserves special praise: every requested adjustment was implemented efficiently and without unnecessary delays. I highly recommend him to anyone looking for a reliable and trustworthy partner to build a professional website.',
+		author: 'Grzegorz Wykret',
+		role: 'Pann-Malg',
+	},
 ];
 
 export default function Testimonials() {
