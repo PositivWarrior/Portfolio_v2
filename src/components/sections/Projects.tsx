@@ -49,7 +49,7 @@ const projects = [
 		description:
 			'Elegant multilingual website for a custom cake studio with a Sanity-powered gallery, reviews, pricing content, and practical SEO automation.',
 		image: '/kakefiesta.png',
-		github: '',
+		github: 'https://github.com/PositivWarrior/kakefiesta',
 		live: 'https://www.kakefiesta.no',
 		tags: [
 			'React 19',
@@ -71,7 +71,7 @@ const projects = [
 		description:
 			'Modern company website for a Polish paint roller manufacturer with SSR, product pages, gallery, SEO automation, and an email inquiry form.',
 		image: '/pann-malg.png',
-		github: '',
+		github: 'https://github.com/PositivWarrior/pann-malg-v2',
 		live: 'https://pann-malg.eu',
 		tags: [
 			'React 19',
