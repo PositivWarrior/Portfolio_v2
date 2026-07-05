@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { useState, useRef } from 'react';
+import PrivacyPolicyLink from '@/components/privacy/PrivacyPolicyLink';
+import { privacyContent } from '@/content/privacy';
 
 const socialLinks = [
 	{
@@ -183,6 +185,12 @@ export default function ContactNew() {
 						</motion.div>
 
 						<motion.div variants={inputVariants}>
+							<p className="text-sm text-muted-foreground leading-relaxed">
+								{privacyContent.form.clauseBefore}{' '}
+								<PrivacyPolicyLink />
+								{privacyContent.form.clauseAfter}
+							</p>
+
 							<button
 								type="submit"
 								disabled={isSubmitting}

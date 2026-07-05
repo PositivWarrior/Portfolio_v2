@@ -1,6 +1,14 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Contact from '@/components/sections/Contact';
+import { PrivacyProvider } from '@/context/PrivacyContext';
+
+const renderContact = () =>
+	render(
+		<PrivacyProvider>
+			<Contact />
+		</PrivacyProvider>,
+	);
 
 const MOCK_API_URL = 'https://mockapi.example.com';
 const FALLBACK_API_URL = 'https://portfolio-v2-backend-email.onrender.com';
@@ -90,7 +98,7 @@ describe('Contact Component', () => {
 	};
 
 	it('renders the contact form correctly', () => {
-		render(<Contact />);
+		renderContact();
 		expect(screen.getByText('Get In Touch')).toBeInTheDocument();
 		expect(screen.getByLabelText('Name')).toBeInTheDocument();
 		expect(screen.getByLabelText('Email')).toBeInTheDocument();
@@ -101,7 +109,7 @@ describe('Contact Component', () => {
 	});
 
 	it('renders social links', () => {
-		render(<Contact />);
+		renderContact();
 		const socialLinks = screen.getAllByRole('link');
 		expect(socialLinks.length).toBeGreaterThanOrEqual(2);
 		const githubLink = socialLinks.find((link) =>
@@ -120,7 +128,7 @@ describe('Contact Component', () => {
 		});
 
 		it('sends form data to the environment variable API URL and shows success', async () => {
-			render(<Contact />);
+			renderContact();
 			await fillAndSubmitForm();
 
 			await waitFor(() => {
@@ -148,7 +156,7 @@ describe('Contact Component', () => {
 				ok: false,
 				json: () => Promise.resolve({ error: 'API error' }),
 			} as Response);
-			render(<Contact />);
+			renderContact();
 			await fillAndSubmitForm();
 
 			await waitFor(() => {
@@ -164,7 +172,7 @@ describe('Contact Component', () => {
 			(global.fetch as jest.Mock).mockRejectedValueOnce(
 				new Error('Network failed'),
 			);
-			render(<Contact />);
+			renderContact();
 			await fillAndSubmitForm();
 
 			await waitFor(() => {
@@ -183,7 +191,7 @@ describe('Contact Component', () => {
 		});
 
 		it('sends form data to the fallback API URL and shows success', async () => {
-			render(<Contact />);
+			renderContact();
 			await fillAndSubmitForm();
 
 			await waitFor(() => {
@@ -227,7 +235,7 @@ describe('Contact Component', () => {
 		);
 
 		process.env.NEXT_PUBLIC_EMAIL_API_URL = MOCK_API_URL;
-		render(<Contact />);
+		renderContact();
 
 		fireEvent.change(screen.getByLabelText('Name'), {
 			target: { value: 'Test User' },

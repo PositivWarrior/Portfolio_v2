@@ -30,6 +30,9 @@ jest.mock('@/components/sections/Testimonials', () => () => (
 jest.mock('@/components/sections/Contact', () => () => (
 	<div data-testid="contact">Contact Section Mock</div>
 ));
+jest.mock('@/components/layout/Footer', () => () => (
+	<div data-testid="footer">Footer Mock</div>
+));
 
 describe('Home Page', () => {
 	it('renders all major sections', () => {
@@ -41,6 +44,7 @@ describe('Home Page', () => {
 		expect(screen.getByTestId('projects')).toBeInTheDocument();
 		expect(screen.getByTestId('testimonials')).toBeInTheDocument();
 		expect(screen.getByTestId('contact')).toBeInTheDocument();
+		expect(screen.getByTestId('footer')).toBeInTheDocument();
 	});
 
 	it('renders the hero section with appropriate content', () => {

@@ -8,6 +8,7 @@ import About from '@/components/sections/About';
 import Projects from '@/components/sections/Projects';
 import Testimonials from '@/components/sections/Testimonials';
 import Contact from '@/components/sections/Contact';
+import Footer from '@/components/layout/Footer';
 import Typewriter from 'typewriter-effect';
 import { Dancing_Script, Eagle_Lake } from 'next/font/google';
 
@@ -278,6 +279,7 @@ export default function Home() {
 				<Projects />
 				<Testimonials />
 				<Contact />
+				<Footer />
 			</main>
 		</>
 	);
