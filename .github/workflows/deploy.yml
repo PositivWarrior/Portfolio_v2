@@ -29,6 +29,10 @@ jobs:
               run: |
                   echo "Contents of ./out/ directory:"
                   ls -la ./out/
+                  echo "SEO files check:"
+                  test -f ./out/robots.txt && echo "✓ robots.txt" || echo "✗ robots.txt MISSING"
+                  test -f ./out/sitemap.xml && echo "✓ sitemap.xml" || echo "✗ sitemap.xml MISSING"
+                  test -f ./out/.htaccess && echo "✓ .htaccess" || echo "✗ .htaccess MISSING"
                   echo "Total files to upload:"
                   find ./out/ -type f | wc -l
 

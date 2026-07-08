@@ -3,6 +3,11 @@ import { Inter, Eagle_Lake } from 'next/font/google';
 import '../styles/globals.css';
 import WarmUpService from '@/components/utils/WarmUpService';
 import PrivacySystem from '@/components/privacy/PrivacySystem';
+import JsonLd from '@/components/seo/JsonLd';
+
+const SITE_URL = 'https://kacpermargol.eu';
+const googleSiteVerification =
+	process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 const eagleLake = Eagle_Lake({
 	subsets: ['latin'],
@@ -14,34 +19,68 @@ const eagleLake = Eagle_Lake({
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-	metadataBase: new URL('https://kacpermargol.eu'),
-	title: 'Kacper Margol | Full-Stack Developer Portfolio',
+	metadataBase: new URL(SITE_URL),
+	title: {
+		default: 'Kacper Margol | Full-Stack Developer Portfolio',
+		template: '%s | Kacper Margol',
+	},
 	description:
-		'Junior Full-Stack Developer with expertise in React, Next.js, Node.js, and modern web technologies. View my projects and skills.',
-	keywords:
-		'full-stack developer, web developer, react developer, next.js developer, javascript developer, portfolio',
-	authors: [{ name: 'Kacper Margol' }],
+		'Portfolio of Kacper Margol — Full-Stack Developer from Poland. React, Next.js, Node.js, TypeScript. View projects, skills, and contact.',
+	keywords: [
+		'Kacper Margol',
+		'full-stack developer',
+		'web developer',
+		'react developer',
+		'next.js developer',
+		'javascript developer',
+		'typescript developer',
+		'portfolio',
+		'Poland developer',
+	],
+	authors: [{ name: 'Kacper Margol', url: SITE_URL }],
 	creator: 'Kacper Margol',
+	publisher: 'Kacper Margol',
+	alternates: {
+		canonical: '/',
+	},
 	openGraph: {
 		type: 'website',
 		locale: 'en_US',
-		url: 'https://kacpermargol.eu',
+		url: SITE_URL,
 		title: 'Kacper Margol | Full-Stack Developer Portfolio',
 		description:
-			'Junior Full-Stack Developer with expertise in React, Next.js, Node.js, and modern web technologies.',
+			'Portfolio of Kacper Margol — Full-Stack Developer. React, Next.js, Node.js, TypeScript. Projects, skills, and contact.',
 		siteName: 'Kacper Margol Portfolio',
+		images: [
+			{
+				url: '/Profile.jpg',
+				width: 1200,
+				height: 630,
+				alt: 'Kacper Margol — Full-Stack Developer',
+			},
+		],
 	},
 	twitter: {
 		card: 'summary_large_image',
 		title: 'Kacper Margol | Full-Stack Developer Portfolio',
 		description:
-			'Junior Full-Stack Developer with expertise in React, Next.js, Node.js, and modern web technologies.',
+			'Portfolio of Kacper Margol — Full-Stack Developer. React, Next.js, Node.js, TypeScript.',
 		creator: '@kacpermargol',
+		images: ['/Profile.jpg'],
 	},
 	robots: {
 		index: true,
 		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			'max-image-preview': 'large',
+			'max-snippet': -1,
+		},
 	},
+	...(googleSiteVerification
+		? { verification: { google: googleSiteVerification } }
+		: {}),
 };
 
 export default function RootLayout({
@@ -52,6 +91,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" className={`scroll-smooth ${eagleLake.variable}`}>
 			<body className={`${inter.className}`}>
+				<JsonLd />
 				<PrivacySystem>
 					<WarmUpService />
 					{children}

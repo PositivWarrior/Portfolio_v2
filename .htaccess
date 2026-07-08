@@ -1,9 +1,17 @@
 # Enable environment variables
 
-# Preserve existing Next.js routing
+# Preserve existing Next.js routing + SEO redirects
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # Redirect www to non-www (canonical domain)
+  RewriteCond %{HTTP_HOST} ^www\.kacpermargol\.eu$ [NC]
+  RewriteRule ^(.*)$ https://kacpermargol.eu/$1 [L,R=301]
+
+  # Redirect index.html to canonical homepage
+  RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
+  RewriteRule ^index\.html$ / [L,R=301]
   
   # Don't rewrite files or directories
   RewriteCond %{REQUEST_FILENAME} -f [OR]
@@ -12,4 +20,4 @@
   
   # Rewrite everything else to index.html to allow html5 state links
   RewriteRule ^ index.html [L]
-</IfModule> 
+</IfModule>
